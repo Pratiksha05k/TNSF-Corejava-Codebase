@@ -39,6 +39,8 @@ public class PersonDemo {
 		t1.calculateTax(p1);
 		System.out.println("After calculation of tax:");
 		
+		//System.out.println(p1.getTax());
+		
 		System.out.println(p1);
 	}
 
