@@ -17,7 +17,7 @@ public class Main {
 		System.out.println("Enter city:");
 		city=sc.next();
 		
-		
+		//calling default
 		Customer c1=new Customer();
 		c1.setCusid(id);
 		c1.setCustcity(city);
@@ -27,6 +27,7 @@ public class Main {
 		
 		System.out.println(c1);
 		
+		//calling para
 		Customer c2=new Customer(name,id,city);
 		System.out.println(c2);
 		
