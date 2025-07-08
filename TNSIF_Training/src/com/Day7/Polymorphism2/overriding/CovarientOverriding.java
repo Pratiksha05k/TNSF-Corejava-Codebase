@@ -31,6 +31,9 @@ class Blue extends Colour{
 
 	@Override
 	//here in the overriden method return type is changed
+	//in covarient we cannot change return type which are primitive
+	//only non primitive return type changed
+	//we can chnage return type only through objects
 	protected Blue getColour() {
 		Blue s=new Blue();
 		return s;
