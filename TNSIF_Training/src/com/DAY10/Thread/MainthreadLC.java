@@ -15,7 +15,7 @@ public class MainthreadLC {
 		catch(Exception e) {
 			System.err.println(e.getMessage());
 		}
-		System.out.println("After completion execution,it is alive or not  "+th.isAlive());
+		System.out.println("After completion of execution,it is alive or not  "+th.isAlive());
 
 	}
 
