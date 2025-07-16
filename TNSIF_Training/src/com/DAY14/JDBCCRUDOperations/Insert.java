@@ -23,7 +23,10 @@ try {
 			System.out.println("Statement created successfully...");
 			
 			//step 4:write a query
+			
 			String q="insert into student_details values (101,'abc','English','10'),(102,'you','HTML','20')";
+			
+			//to insert multiple data we used prepared statement like insert(?,?,?,?)
 			
 			boolean s=stmt.execute(q);
 			System.out.println("Values inserted succesfully.....");
