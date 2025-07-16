@@ -1,17 +1,14 @@
-package com.DAY13.JDBC_operations;
+package com.DAY14.JDBCCRUDOperations;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 
-
-
-public class JDBCTable {
-	
+public class Delete {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		try {
+try {
 			
 			//step 1:load the driver
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -26,16 +23,17 @@ public class JDBCTable {
 			System.out.println("Statement created successfully...");
 			
 			//step 4:write a query
-			String q="create table student_details(stdid int,name varchar(20),subject varchar(20),duration varchar(20))";
+			String q="delete from student_details where stdid=102";
 			
-			boolean s=stmt.execute(q);
-			System.out.println("Table created succesfully.....");
+			int s=stmt.executeUpdate(q);
+			System.out.println("deleted succesfully.....");
 			
 		}
 		catch(Exception e) {
 			System.err.println(e);
 			
 		}
+
 
 	}
 

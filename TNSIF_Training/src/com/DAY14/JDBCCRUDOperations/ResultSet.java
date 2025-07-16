@@ -1,17 +1,15 @@
-package com.DAY13.JDBC_operations;
+package com.DAY14.JDBCCRUDOperations;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 
-
-
-public class JDBCTable {
-	
+public class ResultSet {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		try {
+
+try {
 			
 			//step 1:load the driver
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -25,11 +23,17 @@ public class JDBCTable {
 			Statement stmt=con.createStatement();
 			System.out.println("Statement created successfully...");
 			
-			//step 4:write a query
-			String q="create table student_details(stdid int,name varchar(20),subject varchar(20),duration varchar(20))";
+			//to get data from db 
+			java.sql.ResultSet rs=stmt.executeQuery("select * from student_details");
+			System.out.println("stdid\t name \t subject \t duration");
 			
-			boolean s=stmt.execute(q);
-			System.out.println("Table created succesfully.....");
+			//int s=stmt.executeUpdate(q);
+			//execute is not here because it is already written in rs
+			
+			//this is for converting db(sql) datatypes to java datatypes to get data
+			while(rs.next()) {
+				System.out.println(rs.getInt(1)+"\t"+rs.getString(2)+"\t"+rs.getString(3)+"\t"+rs.getInt(4));
+			}
 			
 		}
 		catch(Exception e) {
